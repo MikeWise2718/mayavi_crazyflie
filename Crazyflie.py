@@ -53,9 +53,8 @@ for index, comp in cdf.iterrows():
     #   note that the minus one is because mayavi has zero-based indices for meshes
     tris = [[v1,v2,v3] for v1,v2,v3 in zip(vi1df.v1-1,vi1df.v2-1,vi1df.v3-1)]
 
-    mesh = mlab.triangular_mesh(px,py,pz, tris, opacity=0 )
-
     # sadly we can do nothing with the specular and emissive colors
-    mlab.pipeline.surface(mesh,color=amb,opacity=alf) 
+    mesh = mlab.triangular_mesh(px,py,pz, tris, color=amb, opacity=alf )
 
+# now show evertyhing
 mlab.show()
